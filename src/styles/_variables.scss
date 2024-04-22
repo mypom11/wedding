@@ -1,0 +1,37 @@
+@import 'mixin';
+
+$border-radius: 10px;
+
+$black: #000;
+$white: #f5f5f5;
+$red: #b52025;
+$yellow: #e2e154;
+$gray: #222;
+$green: #008120;
+$pink: #f0aa94;
+$blue: #3171c8;
+
+//font-size
+$fxl: 20px;
+$fl: 16px;
+$fn: 14px;
+$fs: 12px;
+
+//margin
+$mxs: 5px;
+$ms: 10px;
+$mn: 15px;
+$ml: 20px;
+$mxl: 30px;
+
+@mixin mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 1280px) {
+    @content;
+  }
+}

@@ -1,0 +1,21 @@
+import React from 'react'
+import { ToastContainer, toast, Slide, Flip } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
+export const AlertComponent = () => {
+  return (
+    <ToastContainer
+      position="top-right"
+      autoClose={1000}
+      hideProgressBar
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="colored"
+      transition={Flip}
+    />
+  )
+}

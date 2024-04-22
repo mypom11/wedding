@@ -1,0 +1,27 @@
+@import '@/styles/variables.scss';
+
+.bottom_sheet {
+  position: fixed;
+  bottom: -100%;
+  width: calc(100% - 8px);
+  height: 60vh;
+  background: $white;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 10;
+  border-radius: 10px 10px 0 0px;
+  box-shadow: 1px 1px 6px rgba($color: $black, $alpha: 0.26);
+  transition: 0.4s;
+
+  .close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+  }
+
+  &.open {
+    bottom: 0;
+  }
+}

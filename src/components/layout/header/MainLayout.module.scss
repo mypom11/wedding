@@ -1,0 +1,14 @@
+@import '@/styles/variables.scss';
+
+.main__layout {
+  height: 100dvh;
+  overflow-y: scroll;
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  section {
+    height: 100%;
+    width: 100%;
+  }
+}

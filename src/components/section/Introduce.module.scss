@@ -1,0 +1,25 @@
+@import '@/styles/variables.scss';
+
+.introduce_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  text-align: center;
+  background: #fdf5f2;
+
+  h2 {
+    font-size: 20px;
+    margin-bottom: 40px;
+    color: $pink;
+    letter-spacing: 2px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    letter-spacing: 2px;
+  }
+}
