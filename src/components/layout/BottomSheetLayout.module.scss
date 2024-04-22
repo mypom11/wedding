@@ -4,7 +4,8 @@
   position: fixed;
   bottom: -100%;
   width: calc(100% - 8px);
-  height: 60vh;
+  height: fit-content;
+  min-height: 10vh;
   background: $white;
   left: 50%;
   transform: translate(-50%);
@@ -12,6 +13,7 @@
   border-radius: 10px 10px 0 0px;
   box-shadow: 1px 1px 6px rgba($color: $black, $alpha: 0.26);
   transition: 0.4s;
+  max-width: 600px;
 
   .close {
     position: absolute;

@@ -5,10 +5,10 @@ import { IoGrid, IoBrowsersOutline } from 'react-icons/io5'
 import classes from './Gallery.module.scss'
 import photo_0 from '@/assets/images/signiture_1.jpg'
 import photo_1 from '@/assets/images/black_1.jpg'
-import photo_2 from '@/assets/images/main_2.jpg'
-import photo_3 from '@/assets/images/signiture_2.jpg'
-import photo_4 from '@/assets/images/black_2.jpg'
-import photo_5 from '@/assets/images/main_1.jpg'
+import photo_2 from '@/assets/images/main_1.jpg'
+import photo_3 from '@/assets/images/black_2.jpg'
+import photo_4 from '@/assets/images/main_2.jpg'
+import photo_5 from '@/assets/images/signiture_2.jpg'
 import Image from 'next/image'
 
 export const Gallery = () => {
@@ -18,39 +18,40 @@ export const Gallery = () => {
 
   const { ref, inView, entry } = useInView({
     /* Optional options */
-    threshold: '0',
+    threshold: '0.6',
     // rootMargin: '40px',
   })
 
-  useEffect(() => {
-    if (inView === false) {
-      setGrid(true)
-    }
-  }, [inView])
+  //   useEffect(() => {
+  //     if (inView === false) {
+  //       setGrid(true)
+  //     }
+  //   }, [inView])
 
   return (
     <section className={classes.gallery_section}>
       <div className={classes.gallery_title}>
         <h3>GALLERY</h3>
+        <ul className={classes.tab_selector} ref={ref}>
+          <li
+            onClick={() => setGrid(true)}
+            className={grid ? classes.selected : ''}
+          >
+            <IoGrid />
+          </li>
+          <li
+            onClick={() => setGrid(false)}
+            className={!grid ? classes.selected : ''}
+          >
+            <IoBrowsersOutline />
+          </li>
+        </ul>
       </div>
-      <ul className={classes.tab_selector} ref={ref}>
-        <li
-          onClick={() => setGrid(true)}
-          className={grid ? classes.selected : ''}
-        >
-          <IoGrid />
-        </li>
-        <li
-          onClick={() => setGrid(false)}
-          className={!grid ? classes.selected : ''}
-        >
-          <IoBrowsersOutline />
-        </li>
-      </ul>
+
       <div className={classes.gallery_grid}>
         <ul className={grid ? classes.grid : classes.normal}>
           {photos.map((photo, index) => (
-            <PhotoComp img={photo} key={index} />
+            <PhotoComp img={photo} key={index} onClick={() => setGrid(false)} />
           ))}
         </ul>
       </div>
@@ -58,10 +59,10 @@ export const Gallery = () => {
   )
 }
 
-const PhotoComp = ({ img }) => {
+const PhotoComp = ({ img, onClick }) => {
   const [isLike, setIsLike] = useState(false)
   return (
-    <li>
+    <li onClick={onClick}>
       <div className={classes.img_box}>
         <Image src={img} />
       </div>

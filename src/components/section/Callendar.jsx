@@ -9,20 +9,17 @@ export const Callendar = () => {
 
   const leftDay = () => {
     const today = new Date()
-    const dDay = new Date('2024-05-25 12:00')
+    const dDay = new Date('2024-05-25T12:00:00') // 날짜와 시간 사이에 "T"를 추가합니다.
 
-    const diffDay = dDay.getTime() - today.getTime()
-    const remainTime = Math.ceil(diffDay / (1000 * 60 * 60 * 24))
-    const second = String(Math.floor(diffDay / 1000) % 60).padStart(2, '0')
-    const minute = String(Math.floor((diffDay / (1000 * 60)) % 60)).padStart(
-      2,
-      '0'
+    const diffTime = dDay.getTime() - today.getTime() // 시간 차이를 밀리초로 계산합니다.
+    const remainDay = Math.floor(diffTime / (1000 * 60 * 60 * 24)) // 일(day) 계산
+    const remainHour = Math.floor((diffTime / (1000 * 60 * 60)) % 24) // 시(hour) 계산
+    const remainMinute = Math.floor((diffTime / (1000 * 60)) % 60) // 분(minute) 계산
+    const remainSecond = Math.floor((diffTime / 1000) % 60) // 초(second) 계산
+
+    setLeftTime(
+      `${remainDay}일 ${remainHour}시간 ${remainMinute}분 ${remainSecond}초`
     )
-    const hours = String(
-      Math.floor((diffDay / (1000 * 60 * 60)) % 60)
-    ).padStart(2, '0')
-
-    return setLeftTime(`${remainTime}일 ${hours}시간 ${minute}분 ${second}초`)
   }
 
   const calendar = ['일', '월', '화', '수', '목', '금', '토']

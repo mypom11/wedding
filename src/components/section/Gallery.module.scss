@@ -1,17 +1,20 @@
 @import '@/styles/variables.scss';
 
 .gallery_section {
+  height: fit-content !important;
+  min-height: 100%;
   text-align: center;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .gallery_title {
-  margin-bottom: 50px;
   letter-spacing: 10px;
 }
 
 .tab_selector {
+  margin-top: 40px;
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -42,23 +45,34 @@
 .gallery_grid {
   width: 100%;
   padding: 0 10px;
-  overflow-y: auto;
   > ul {
+    transition: 0.2s;
+    height: 100%;
     &.grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 4px;
+      gap: 10px;
       > li {
         position: relative;
         background: #000;
-        height: 150px;
+        width: 100%;
+        height: fit-content;
         overflow: hidden;
 
+        &:nth-child(1) {
+          grid-column: 1/4;
+        }
+        &:nth-child(2) {
+          grid-column: 1/3;
+        }
+        &:nth-child(4) {
+          grid-column: 2/4;
+        }
+        &:nth-child(5) {
+          grid-column: 1/3;
+        }
+
         .img_box {
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%, -50%);
           width: 100%;
         }
 
@@ -77,6 +91,7 @@
         background: #ddd;
         width: 100%;
         height: fit-content;
+        box-shadow: 3px 3px 6px rgba($color: #000000, $alpha: 0.16);
 
         .like_container {
           text-align: left;
@@ -85,14 +100,14 @@
           bottom: 0%;
           left: 0;
           background: #fff;
-          padding: 5px 10px;
+          padding: 10px 20px;
           transition: 0.2s;
           .icon_box {
             height: 20px;
             font-size: 20px;
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 10px;
             margin-bottom: 5px;
           }
           p {
