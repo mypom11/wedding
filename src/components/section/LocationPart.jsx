@@ -15,6 +15,12 @@ export const LocationPart = () => {
   const [navOpen, setNavOpen] = useState(false)
   const [roadOpen, setRoadOpen] = useState(false)
 
+  const handleTmap = () => {
+    window.open(
+      'https://apis.openapi.sk.com/tmap/app/routes?appKey=Xir82s6UgQ55y0SAJVtK533f0UdSoh0Z8AlGloK2&name=문수컨벤션웨딩홀&lon=129.2587&lat=35.53603'
+    )
+  }
+
   return (
     <section className={classes.location_section}>
       <div className={classes.text_box}>
@@ -81,26 +87,17 @@ export const LocationPart = () => {
       <BottomSheetLayout isOpen={navOpen} setIsOpen={setNavOpen}>
         <div className={classes.nav_list}>
           <ul>
-            <li>
-              <a
-                href="javascript:void(0);"
-                onclick="location.href='https://apis.openapi.sk.com/tmap/app/routes?appKey=Xir82s6UgQ55y0SAJVtK533f0UdSoh0Z8AlGloK2&name=문수컨벤션웨딩홀&lon=129.2587&lat=35.53603'"
-              >
-                <Image src={tmap} width={40} height={40} />
-                티맵으로 길찾기
-              </a>
+            <li onClick={handleTmap}>
+              <Image src={tmap} width={40} height={40} />
+              티맵으로 길찾기
             </li>
             <li>
-              <a href="">
-                <Image src={kakaoNav} width={40} height={40} />
-                카카오네비로 길찾기
-              </a>
+              <Image src={kakaoNav} width={40} height={40} />
+              카카오네비로 길찾기
             </li>
             <li>
-              <a href="">
-                <Image src={naverNav} width={40} height={40} />
-                네이버지도로 길찾기
-              </a>
+              <Image src={naverNav} width={40} height={40} />
+              네이버지도로 길찾기
             </li>
           </ul>
         </div>
