@@ -1,17 +1,29 @@
 import React from 'react'
-
+import { useInView } from 'react-intersection-observer'
 import classes from './Introduce.module.scss'
 
 export const Introduce = () => {
+  const { ref, inView, entry } = useInView({
+    threshold: '0.5',
+  })
+
   return (
-    <section className={classes.introduce_section}>
+    <section className={classes.introduce_section} ref={ref}>
       <h2>Love</h2>
-      <ul>
-        <li>서로가 마주보며 다져온 사랑을</li>
-        <li>이제 함께 한 곳을 바라보며</li>
-        <li>걸어 갈 수 있는 큰 사랑으로 키우자 합니다.</li>
-        <li>저희 두 사람이 사랑의 이름으로</li>
-        <li>지켜나갈 수 있게 앞날을</li>
+      <ul className={inView ? classes.active : ''}>
+        <li>장담하건데,</li>
+        <li>세상이 다 겨울이어도</li>
+        <li>우리 사랑은 늘 봄처럼 따뜻하고</li>
+        <li>간혹, 여름처럼 뜨거울 겁니다.</li>
+        <li>- 이수동 [사랑가]</li>
+      </ul>
+      <ul className={inView ? classes.active : ''}>
+        <li>저희 두 사람이 한마음 한뜻으로</li>
+        <li>새 인생을 시작하려 합니다.</li>
+        <li>봄 꽃처럼 곱게,</li>
+        <li>봄 햇살처럼 포근하게,</li>
+        <li>서로를 귀히 여기며 살겠습니다.</li>
+        <li>부디 시작의 자리에 함께해 주시어</li>
         <li>축복해 주시면 감사하겠습니다.</li>
       </ul>
     </section>

@@ -7,9 +7,9 @@ export const Contact = ({ name, num, bank, account }) => {
   return (
     <div className={classes.contact_wrapper}>
       <h3>{name}</h3>
-      <p>
-        <a href={`tel:${num}`}>{num}</a>
-      </p>
+
+      <a href={`tel:${num}`}>{num}</a>
+
       {account && (
         <>
           <CopyToClipboard
@@ -19,9 +19,7 @@ export const Contact = ({ name, num, bank, account }) => {
             }}
           >
             <button>
-              <p>
-                {bank} : {account}
-              </p>
+              {bank} : {account}
             </button>
           </CopyToClipboard>
         </>

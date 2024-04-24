@@ -14,18 +14,41 @@ export const BottomSheetLayout = ({ children, isOpen, setIsOpen, style }) => {
   if (!isCSR) return <></>
 
   const portal = ReactDOM.createPortal(
-    <aside
-      className={`${classes.bottom_sheet} ${isOpen ? classes.open : ''}`}
-      style={style}
-    >
-      <AiOutlineClose
-        className={classes.close}
-        onClick={() => setIsOpen(false)}
-      />
+    <>
+      <BottomOverlay isOpen={isOpen} />
+      <aside
+        className={`${classes.bottom_sheet} ${isOpen ? classes.open : ''}`}
+        style={style}
+      >
+        <div className={classes.inner}>
+          <AiOutlineClose
+            className={classes.close}
+            onClick={() => setIsOpen(false)}
+          />
 
-      {isOpen && children}
-    </aside>,
+          {isOpen && children}
+        </div>
+      </aside>
+    </>,
     document.getElementById('bottom_sheet')
+  )
+
+  return portal
+}
+
+export const BottomOverlay = ({ isOpen }) => {
+  const [isCSR, setIsCSR] = useState(false)
+
+  useEffect(() => {
+    setIsCSR(true)
+  }, [])
+
+  if (typeof window === 'undefined') return <></>
+  if (!isCSR) return <></>
+
+  const portal = ReactDOM.createPortal(
+    <div className={`${classes.overlay} ${isOpen ? '' : classes.close}`}></div>,
+    document.getElementById('overlay_drop')
   )
 
   return portal

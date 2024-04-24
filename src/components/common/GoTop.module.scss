@@ -1,0 +1,22 @@
+@import '@/styles/variables.scss';
+
+.top_container {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  border-radius: 50%;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba($color: $white, $alpha: 0.5);
+  box-shadow: 3px 3px 6px rgba($color: $black, $alpha: 0.16);
+
+  transition: 0.5s;
+
+  transform: translateX(100px);
+
+  &.open {
+    transform: translateX(0);
+  }
+}

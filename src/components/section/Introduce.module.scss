@@ -11,9 +11,20 @@
 
   h2 {
     font-size: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 80px;
     color: $pink;
     letter-spacing: 2px;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      transform: translateY(40px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
   }
 
   ul {
@@ -21,5 +32,21 @@
     flex-direction: column;
     gap: 10px;
     letter-spacing: 2px;
+    transform: translateY(-40px);
+    opacity: 0;
+
+    margin-bottom: 100px;
+    font-family: serif;
+    &:last-child {
+      margin-bottom: 0;
+      font-family: sans-serif;
+      &.active {
+        animation: fadeIn 1s 1s forwards;
+      }
+    }
+
+    &.active {
+      animation: fadeIn 1s forwards;
+    }
   }
 }

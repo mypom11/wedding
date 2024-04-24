@@ -1,4 +1,5 @@
 import { AlertComponent } from '@/components/common/AlertComponent'
+import { GoTop } from '@/components/common/GoTop'
 import { Layout } from '@/components/layout/Layout'
 import { Header } from '@/components/layout/header/Header'
 import { MainLayout } from '@/components/layout/header/MainLayout'
@@ -20,6 +21,7 @@ export default function Home() {
         <Header headerOpen={headerOpen} />
         <MainLayout setHeaderOpen={setHeaderOpen} />
       </Layout>
+
       <AlertComponent />
     </>
   )

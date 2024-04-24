@@ -6,10 +6,10 @@
   position: absolute;
   height: 60px;
   width: 100%;
-  background: rgba($color: $white, $alpha: 0.02);
+  //   background: rgba($color: $white, $alpha: 0.02);
   top: -60px;
   padding: 0 16px;
-  box-shadow: 1px 1px 6px rgba($color: $black, $alpha: 0.05);
+  //   box-shadow: 1px 1px 6px rgba($color: $black, $alpha: 0.05);
   //   backdrop-filter: blur(10px);
   @include flex;
   justify-content: flex-end;

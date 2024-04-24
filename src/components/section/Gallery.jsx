@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { useInView } from 'react-intersection-observer'
 import { AiOutlineHeart, AiFillHeart, AiOutlineComment } from 'react-icons/ai'
 import { IoGrid, IoBrowsersOutline } from 'react-icons/io5'
 import classes from './Gallery.module.scss'
@@ -10,29 +9,21 @@ import photo_3 from '@/assets/images/black_2.jpg'
 import photo_4 from '@/assets/images/main_2.jpg'
 import photo_5 from '@/assets/images/signiture_2.jpg'
 import Image from 'next/image'
+import { BottomSheetLayout } from '../layout/BottomSheetLayout'
+import { Comment } from '../common/Comment'
 
 export const Gallery = () => {
   const [grid, setGrid] = useState(true)
 
   const photos = [photo_0, photo_1, photo_2, photo_3, photo_4, photo_5]
 
-  const { ref, inView, entry } = useInView({
-    /* Optional options */
-    threshold: '0.6',
-    // rootMargin: '40px',
-  })
-
-  //   useEffect(() => {
-  //     if (inView === false) {
-  //       setGrid(true)
-  //     }
-  //   }, [inView])
+  const [isOpen, setIsOpen] = useState(true)
 
   return (
     <section className={classes.gallery_section}>
       <div className={classes.gallery_title}>
         <h3>GALLERY</h3>
-        <ul className={classes.tab_selector} ref={ref}>
+        <ul className={classes.tab_selector}>
           <li
             onClick={() => setGrid(true)}
             className={grid ? classes.selected : ''}
@@ -51,15 +42,28 @@ export const Gallery = () => {
       <div className={classes.gallery_grid}>
         <ul className={grid ? classes.grid : classes.normal}>
           {photos.map((photo, index) => (
-            <PhotoComp img={photo} key={index} onClick={() => setGrid(false)} />
+            <PhotoComp
+              img={photo}
+              key={index}
+              onClick={() => setGrid(false)}
+              onComment={() => setIsOpen(!isOpen)}
+            />
           ))}
         </ul>
       </div>
+
+      <BottomSheetLayout
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        style={{ height: '50vh' }}
+      >
+        <Comment />
+      </BottomSheetLayout>
     </section>
   )
 }
 
-const PhotoComp = ({ img, onClick }) => {
+const PhotoComp = ({ img, onClick, onComment }) => {
   const [isLike, setIsLike] = useState(false)
   return (
     <li onClick={onClick}>
@@ -68,7 +72,7 @@ const PhotoComp = ({ img, onClick }) => {
       </div>
       <div className={classes.like_container}>
         <div className={classes.icon_box}>
-          <AiOutlineComment />
+          <AiOutlineComment onClick={onComment} />
 
           {isLike ? (
             <AiFillHeart

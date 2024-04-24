@@ -11,6 +11,7 @@ export default function Document() {
           src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=01279973901833e94a5f072077ef31b8&autoload=false`}
           strategy="beforeInteractive"
         />
+        <div id="overlay_drop"></div>
         <div id="bottom_sheet"></div>
       </body>
     </Html>

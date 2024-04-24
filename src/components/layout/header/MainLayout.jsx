@@ -11,10 +11,19 @@ import { Noto_Sans_KR } from 'next/font/google'
 const notoSans = Noto_Sans_KR({ subsets: ['latin'] })
 
 import classes from './MainLayout.module.scss'
+import { GoTop } from '@/components/common/GoTop'
 
 export const MainLayout = ({ setHeaderOpen }) => {
   const mainContainerRef = useRef(null)
   const beforeScroll = useRef(0)
+
+  const handleGoTop = () => {
+    mainContainerRef.current.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    })
+  }
 
   const headerOpenHandler = useMemo(
     () =>
@@ -52,6 +61,10 @@ export const MainLayout = ({ setHeaderOpen }) => {
       <Gallery />
       <LocationPart />
       <Account />
+      <GoTop
+        onTop={handleGoTop}
+        isOn={mainContainerRef?.current?.scrollTop > 0}
+      />
     </main>
   )
 }
