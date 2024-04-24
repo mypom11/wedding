@@ -20,14 +20,12 @@ export const BottomSheetLayout = ({ children, isOpen, setIsOpen, style }) => {
         className={`${classes.bottom_sheet} ${isOpen ? classes.open : ''}`}
         style={style}
       >
-        <div className={classes.inner}>
-          <AiOutlineClose
-            className={classes.close}
-            onClick={() => setIsOpen(false)}
-          />
+        <AiOutlineClose
+          className={classes.close}
+          onClick={() => setIsOpen(false)}
+        />
 
-          {isOpen && children}
-        </div>
+        {isOpen && children}
       </aside>
     </>,
     document.getElementById('bottom_sheet')

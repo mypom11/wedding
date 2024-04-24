@@ -55,7 +55,7 @@ export const Gallery = () => {
       <BottomSheetLayout
         isOpen={isOpen}
         setIsOpen={setIsOpen}
-        style={{ height: '50vh' }}
+        style={{ height: '60vh' }}
       >
         <Comment />
       </BottomSheetLayout>

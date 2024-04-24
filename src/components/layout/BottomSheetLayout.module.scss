@@ -21,6 +21,7 @@
     top: 10px;
     width: 20px;
     height: 20px;
+    z-index: 1;
   }
 
   &.open {
@@ -38,4 +39,5 @@
   width: 100vw;
   height: 100vh;
   background: rgba($color: $black, $alpha: 0.26);
+  z-index: 1;
 }

@@ -9,7 +9,9 @@
 
   .map_container {
     width: 100%;
-    height: 50vh;
+    height: auto;
+    margin-bottom: 40px;
+    position: relative;
   }
 }
 
@@ -22,5 +24,92 @@
   h5 {
     letter-spacing: 2px;
     margin-bottom: 5px;
+  }
+}
+
+.navigation {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  button {
+    display: block;
+    width: 80%;
+    height: 40px;
+    border-radius: 50px;
+    text-align: center;
+    border: 1px solid rgba($color: #000000, $alpha: 0.3);
+  }
+}
+
+.transport {
+  padding: 20px;
+  > div {
+    margin-bottom: 40px;
+  }
+
+  h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    em {
+      font-size: 16px;
+    }
+  }
+  ul {
+    li {
+      margin-bottom: 8px;
+    }
+    b {
+      display: block;
+      margin-bottom: 2px;
+    }
+  }
+
+  h4 {
+    font-size: 14px;
+    em {
+      margin-top: 2px;
+      display: block;
+      color: rgba($color: #000000, $alpha: 0.6);
+    }
+  }
+}
+
+.nav_list {
+  padding: 60px 20px;
+  margin-bottom: 50px;
+  ul {
+    li {
+      > a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        height: 50px;
+        border-radius: 30px;
+        border: 1px solid rgba($color: #000000, $alpha: 0.3);
+        margin-bottom: 20px;
+        font-weight: 600;
+        background: #fff;
+      }
+
+      &:nth-child(2) {
+        > a {
+          background: #f6ec4c;
+        }
+      }
+      &:last-child {
+        > a {
+          margin-bottom: 0;
+        }
+      }
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+    }
   }
 }
