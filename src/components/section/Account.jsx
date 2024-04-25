@@ -52,6 +52,14 @@ export const Account = () => {
         <li onClick={() => bottomOpenHandler(3)}>신부 혼주 계좌번호 확인</li>
       </ul>
 
+      <div className={classes.ending}>
+        <p>
+          이 청첩장은 신랑과 신부가 <b>직접 만든 청첩장</b>입니다.
+        </p>
+        <p>축복해주신 마음 평생 잊지 않고 행복하게 살겠습니다.</p>
+      </div>
+      <address>copyrightⓒ2024 민정기❤️우윤서. All rights reserved </address>
+
       <BottomSheetLayout isOpen={isOpen} setIsOpen={setIsOpen}>
         <Contact
           name={selected.name}

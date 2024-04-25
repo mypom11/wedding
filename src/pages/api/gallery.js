@@ -3,9 +3,7 @@ import { MongoClient } from 'mongodb'
 const getGalleryData = async (req, res) => {
   let client
   try {
-    client = await MongoClient.connect(
-      'mongodb+srv://test:Gjhq9w5Nf1JZ3G2z@ideal-worldcup.ltuh0tm.mongodb.net/'
-    )
+    client = await MongoClient.connect(process.env.NEXT_PUBLIC_MONGO_URL)
   } catch (error) {
     res.status(500).json({ message: 'Could not connect to database.' })
     return

@@ -61,6 +61,7 @@ export const MainLayout = ({ setHeaderOpen }) => {
       <Gallery />
       <LocationPart />
       <Account />
+
       <GoTop
         onTop={handleGoTop}
         isOn={mainContainerRef?.current?.scrollTop > 0}

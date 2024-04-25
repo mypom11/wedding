@@ -6,7 +6,7 @@ import classes from './VisualPart.module.scss'
 import useSakura from '../common/Sakura'
 
 export const VisualPart = () => {
-  useSakura('visual', { newOn: 100, petalLifetime: 1000 })
+  useSakura('visual', { newOn: 500, petalLifetime: 500 })
 
   return (
     <section className={classes.visual_section}>
@@ -31,7 +31,7 @@ export const VisualPart = () => {
         </div>
         <div className={classes.location}>
           <h5>2024.05.25 SAT PM 12:00</h5>
-          <h5>문수 컨벤션 웨딩홀 그란데 베뉴홀</h5>
+          <h5>문수 컨벤션 웨딩홀 그란데베뉴</h5>
         </div>
       </div>
     </section>

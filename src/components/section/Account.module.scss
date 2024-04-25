@@ -6,15 +6,18 @@
   justify-content: center;
   align-items: center;
   background: #ddd;
+  position: relative;
 
   .title {
-    margin-bottom: 100px;
+    transform: translateY(-100px);
+    margin-bottom: 80px;
     h3 {
       letter-spacing: 4px;
     }
   }
 
   .account_container {
+    transform: translateY(-100px);
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -31,5 +34,36 @@
       border: 1px solid rgba($color: $gray, $alpha: 0.2);
       background-color: $white;
     }
+  }
+
+  .ending {
+    background: rgba($color: $gray, $alpha: 0.2);
+    padding: 10px 10px;
+    font-size: 13px;
+    color: #000;
+    text-align: center;
+    letter-spacing: 2px;
+    position: absolute;
+    bottom: 140px;
+    left: 0;
+    width: 100%;
+    p {
+      margin-bottom: 5px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      b {
+        color: $blue;
+      }
+    }
+  }
+  address {
+    position: absolute;
+    bottom: 90px;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: rgba($color: $black, $alpha: 0.7);
   }
 }

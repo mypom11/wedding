@@ -30,6 +30,8 @@ export const Comment = ({ data, newComment }) => {
       message: desc,
     }
     newComment(params)
+    setName('')
+    setDesc('')
   }
 
   useEffect(() => {
@@ -85,6 +87,11 @@ export const Comment = ({ data, newComment }) => {
               onChange={(e) => setDesc(e.target.value)}
               type="text"
               placeholder="축하메세지를 입력해주세요."
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  onComment()
+                }
+              }}
             />
             <button disabled={desc === ''} onClick={onComment}>
               전송
