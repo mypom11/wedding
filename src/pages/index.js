@@ -1,7 +1,6 @@
 import { AlertComponent } from '@/components/common/AlertComponent'
-
+import { Analytics } from '@vercel/analytics/react'
 import { Layout } from '@/components/layout/Layout'
-import { Header } from '@/components/layout/header/Header'
 import { MainLayout } from '@/components/layout/header/MainLayout'
 
 import Head from 'next/head'
@@ -30,8 +29,8 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Analytics />
       <Layout>
-        {/* <Header headerOpen={headerOpen} /> */}
         <MainLayout setHeaderOpen={setHeaderOpen} />
       </Layout>
 
