@@ -21,6 +21,16 @@ export const LocationPart = () => {
     )
   }
 
+  const handleKakaonavi = () => {
+    console.log(window)
+    window.window.Kakao.Navi.start({
+      name: '문수컨벤션웨딩홀',
+      x: 129.2587,
+      y: 35.53603,
+      coordType: 'wgs84',
+    })
+  }
+
   return (
     <section className={classes.location_section}>
       <div className={classes.text_box}>
@@ -91,7 +101,7 @@ export const LocationPart = () => {
               <Image src={tmap} width={40} height={40} />
               티맵으로 길찾기
             </li>
-            <li>
+            <li onClick={handleKakaonavi}>
               <Image src={kakaoNav} width={40} height={40} />
               카카오네비로 길찾기
             </li>

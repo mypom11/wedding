@@ -17,7 +17,7 @@ export const Gallery = () => {
 
   const photos = [photo_0, photo_1, photo_2, photo_3, photo_4, photo_5]
 
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <section className={classes.gallery_section}>
