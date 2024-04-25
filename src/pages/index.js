@@ -18,7 +18,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Header headerOpen={headerOpen} />
+        {/* <Header headerOpen={headerOpen} /> */}
         <MainLayout setHeaderOpen={setHeaderOpen} />
       </Layout>
 
