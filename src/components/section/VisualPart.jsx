@@ -31,7 +31,7 @@ export const VisualPart = () => {
         </div>
         <div className={classes.location}>
           <h5>2024.05.25 SAT PM 12:00</h5>
-          <h5>문수 컨벤션 웨딩홀 그란데베뉴</h5>
+          <h5>문수컨벤션웨딩홀 그란데베뉴</h5>
         </div>
       </div>
     </section>
