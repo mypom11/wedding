@@ -19,6 +19,24 @@ export const Gallery = () => {
 
   const [isOpen, setIsOpen] = useState(false)
 
+  const getGalleryData = async () => {
+    const response = await fetch('api/gallery', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    const data = await response.json()
+
+    console.log(data)
+    if (!response.ok) {
+      throw new Error(data.message || 'something wrong!')
+    }
+  }
+
+  useEffect(() => {
+    getGalleryData()
+  }, [])
   return (
     <section className={classes.gallery_section}>
       <div className={classes.gallery_title}>
@@ -68,7 +86,7 @@ const PhotoComp = ({ img, onClick, onComment }) => {
   return (
     <li onClick={onClick}>
       <div className={classes.img_box}>
-        <Image src={img} />
+        <Image src={img} width={500} height={500} alt="" />
       </div>
       <div className={classes.like_container}>
         <div className={classes.icon_box}>

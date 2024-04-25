@@ -6,7 +6,7 @@ import classes from './VisualPart.module.scss'
 import useSakura from '../common/Sakura'
 
 export const VisualPart = () => {
-  useSakura('visual', { newOn: 1000, petalLifetime: 1000 })
+  useSakura('visual', { newOn: 100, petalLifetime: 1000 })
 
   return (
     <section className={classes.visual_section}>
