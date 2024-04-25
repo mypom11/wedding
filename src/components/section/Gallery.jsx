@@ -9,6 +9,7 @@ import photo_2 from '@/assets/images/main_1.jpg'
 import photo_3 from '@/assets/images/black_2.jpg'
 import photo_4 from '@/assets/images/main_2.jpg'
 import photo_5 from '@/assets/images/signiture_2.jpg'
+import photo_6 from '@/assets/images/black_3.jpg'
 
 import Image from 'next/image'
 import { BottomSheetLayout } from '../layout/BottomSheetLayout'
@@ -19,7 +20,7 @@ export const Gallery = () => {
   const [photoData, setPhotoData] = useState([])
   const [selectedComment, setSelectedComment] = useState(0)
 
-  const photos = [photo_0, photo_1, photo_2, photo_3, photo_4, photo_5]
+  const photos = [photo_0, photo_1, photo_2, photo_3, photo_4, photo_5, photo_6]
 
   const [isOpen, setIsOpen] = useState(false)
 
