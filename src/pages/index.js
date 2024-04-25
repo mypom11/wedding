@@ -13,6 +13,13 @@ export default function Home() {
     <>
       <Head>
         <title>민정기❤️우윤서 WeddingDay</title>
+        <meta property="og:url" content="https://yswoo.jkmin.store" />
+        <meta property="og:title" content="민정기❤️우윤서 WeddingDay" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:description"
+          content="05월 25일 12시 / 문수컨벤션 그란데베뉴"
+        />
         <meta
           name="description"
           content="05월 25일 12시 / 문수컨벤션 그란데베뉴"
