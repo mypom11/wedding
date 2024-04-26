@@ -37,7 +37,7 @@ export const Introduce = () => {
           <h3>
             우승연
             <br />
-            (우순노)
+            <em>(우순노)</em>
           </h3>
           <h4>장녀</h4>
           <h3>우윤서</h3>

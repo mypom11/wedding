@@ -10,6 +10,13 @@ import photo_3 from '@/assets/images/black_2.jpg'
 import photo_4 from '@/assets/images/main_2.jpg'
 import photo_5 from '@/assets/images/signiture_2.jpg'
 import photo_6 from '@/assets/images/black_3.jpg'
+import img_1 from '@/assets/images/img_1.jpg'
+import img_2 from '@/assets/images/img_2.jpg'
+import img_3 from '@/assets/images/img_3.jpg'
+import img_4 from '@/assets/images/img_4.jpg'
+import img_5 from '@/assets/images/img_5.jpg'
+import img_6 from '@/assets/images/img_6.jpg'
+import img_7 from '@/assets/images/img_7.jpg'
 
 import Image from 'next/image'
 import { BottomSheetLayout } from '../layout/BottomSheetLayout'
@@ -20,7 +27,22 @@ export const Gallery = () => {
   const [photoData, setPhotoData] = useState([])
   const [selectedComment, setSelectedComment] = useState(0)
 
-  const photos = [photo_0, photo_1, photo_2, photo_3, photo_4, photo_5, photo_6]
+  const photos = [
+    photo_0,
+    photo_1,
+    photo_2,
+    photo_3,
+    photo_4,
+    photo_5,
+    photo_6,
+    img_1,
+    img_2,
+    img_3,
+    img_4,
+    img_5,
+    img_6,
+    img_7,
+  ]
 
   const [isOpen, setIsOpen] = useState(false)
 
@@ -154,15 +176,24 @@ const PhotoComp = ({ img, onClick, onComment, data, onLike }) => {
       </div>
       <div className={classes.like_container}>
         <div className={classes.icon_box}>
-          <AiOutlineComment onClick={onComment} />
+          <div className={data.comment.length === 0 ? classes.icon : ''}>
+            <AiOutlineComment onClick={onComment} />
+            {data.comment.length > 0 && <span>{data.comment.length}</span>}
+          </div>
 
           {isLike ? (
-            <AiFillHeart style={{ color: 'red' }} onClick={handleLike} />
+            <div>
+              <AiFillHeart style={{ color: 'red' }} onClick={handleLike} />
+            </div>
           ) : (
-            <AiOutlineHeart onClick={handleLike} />
+            <div>
+              <AiOutlineHeart onClick={handleLike} />
+            </div>
           )}
 
-          <p>좋아요 {like}개</p>
+          <p>
+            좋아요 <b>{like}</b>개
+          </p>
         </div>
       </div>
     </li>
