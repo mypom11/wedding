@@ -4,7 +4,7 @@ import classes from './Introduce.module.scss'
 
 export const Introduce = () => {
   const { ref, inView, entry } = useInView({
-    threshold: '0.5',
+    threshold: '0',
   })
 
   return (
@@ -34,7 +34,11 @@ export const Introduce = () => {
           <h3>민정기</h3>
         </div>
         <div>
-          <h3>우승연(우순노)</h3>
+          <h3>
+            우승연
+            <br />
+            (우순노)
+          </h3>
           <h4>장녀</h4>
           <h3>우윤서</h3>
         </div>
