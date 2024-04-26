@@ -37,16 +37,45 @@
 
     margin-bottom: 100px;
     font-family: serif;
-    &:last-child {
-      margin-bottom: 0;
+    &:nth-child(2) {
+      font-family: sans-serif;
+      &.active {
+        animation: fadeIn 1s forwards;
+      }
+    }
+    &:nth-child(3) {
       font-family: sans-serif;
       &.active {
         animation: fadeIn 1s 1s forwards;
       }
     }
+  }
+
+  .name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-40px);
+    opacity: 0;
+    gap: 80px;
 
     &.active {
-      animation: fadeIn 1s forwards;
+      animation: fadeIn 1s 2s forwards;
+    }
+    > div {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      h3 {
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 2px;
+      }
+      h4 {
+        color: $gray;
+        letter-spacing: 2px;
+      }
     }
   }
 }

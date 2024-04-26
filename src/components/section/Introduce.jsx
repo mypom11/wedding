@@ -26,6 +26,19 @@ export const Introduce = () => {
         <li>부디 시작의 자리에 함께해 주시어</li>
         <li>축복해 주시면 감사하겠습니다.</li>
       </ul>
+
+      <div className={`${classes.name} ${inView ? classes.active : ''}`}>
+        <div>
+          <h3>박연남</h3>
+          <h4>장남</h4>
+          <h3>민정기</h3>
+        </div>
+        <div>
+          <h3>우승연(우순노)</h3>
+          <h4>장녀</h4>
+          <h3>우윤서</h3>
+        </div>
+      </div>
     </section>
   )
 }
